@@ -10,8 +10,8 @@ if len(sys.argv) < 4:
    sys.exit(1)
 
 input_image = sys.argv[1]
-name = sys.argv[2]
-last_name = sys.argv[3]
+name = sys.argv[2].upper()
+last_name = sys.argv[3].upper()
 
 #Read image
 #COLOR:
@@ -34,7 +34,7 @@ cv2.putText(img,str_to_write,(rows/2-70,cols/4+35),font,2,color,1,cv2.LINE_AA)
 #cv2.putText(img,str_to_write,(rows/10,cols/10),font,2,color,6,cv2.CV_AA)
 
 #Show image and wait
-cv2.imshow('image',img)
+cv2.imshow('Sheriff ' + name + ' ' + last_name ,img)
 k = cv2.waitKey(0)
 
 # wait for ESC key to exit
@@ -44,5 +44,5 @@ if k == 27:
 # wait for 's' key to save and exit
 elif k == ord('s'):
     output_file_name = last_name + "_output.jpg"
-    cv2.imwrite(output_file_name,img)
+    cv2.imwrite(output_file_name, img)
     cv2.destroyAllWindows()
