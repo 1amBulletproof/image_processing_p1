@@ -22,14 +22,15 @@ img = cv2.imread(sys.argv[1],1)
 #Write image
 str_to_write = name + " " + last_name
 font = cv2.FONT_HERSHEY_PLAIN
-color = (0,0,255) #Red because OpenCV is BGR
+color = (255,255,255) #Red because OpenCV is BGR
 
 #COLOR
 rows,cols,depth = img.shape
 #GRAYSCALE:
 #rows,cols = img.shape
 
-cv2.putText(img,str_to_write,(rows/10,cols/10),font,2,color,6,cv2.LINE_AA)
+#cv2.putText(img, text, org(bottom_let_corner_of_string), fontFace, fontScale, color,thickness, line_type, bottomeLeftOrigin(true, img data origin @ bottom left)
+cv2.putText(img,str_to_write,(rows/2-70,cols/4+35),font,2,color,1,cv2.LINE_AA)
 #cv2.putText(img,str_to_write,(rows/10,cols/10),font,2,color,6,cv2.CV_AA)
 
 #Show image and wait
